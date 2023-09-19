@@ -1,0 +1,42 @@
+<div class="container col-md-6">
+    <div class="card" style="margin: 10px;">
+        <div class="card-header">
+            <h3>Search Client</h3>
+        </div>
+        <div class="card-body">
+            <form action="" [formGroup]="clientForm">
+                <div class="form-group">
+                    <dx-text-box
+                        width="100%"
+                        placeholder="Name"
+                        [showClearButton]="true"
+                        [stylingMode]="stylingMode"
+                        type="text"
+                        style="margin-bottom: 10px;"
+                        formControlName="searchTerm"
+                    >
+                        <dx-validator [validationRules]="[{
+                            type: 'required'
+                        }]"></dx-validator>
+                    </dx-text-box>
+                </div>
+                <div class="col text-center">
+                    <button class="btn" [disabled]="clientForm.invalid" (click)="searchClient()" class="btn btn-outline-success">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <mat-table #table [dataSource]="clients">
+    <ng-container matColumnDef="id" style="color: white;">
+      <mat-header-cell *matHeaderCellDef> Id </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="columnsToDisplay"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: columnsToDisplay;"></mat-row>
+
+</mat-table>
+</div>

@@ -1,0 +1,29 @@
+<div class="container col-md-6">
+    <div class="card" style="margin: 10px;">
+        <div class="card-header">
+            <h3>Add Client</h3>
+        </div>
+        <div class="card-body">
+            <form action="" [formGroup]="clientForm">
+                <div class="form-group">
+                    <dx-text-box
+                        width="100%"
+                        placeholder="Name"
+                        [showClearButton]="true"
+                        [stylingMode]="stylingMode"
+                        type="text"
+                        style="margin-bottom: 10px;"
+                        formControlName="name"
+                    >
+                        <dx-validator [validationRules]="[{
+                            type: 'required'
+                        }]"></dx-validator>
+                    </dx-text-box>
+                </div>
+                <div class="col text-center">
+                    <button class="btn" [disabled]="clientForm.invalid" (click)="AddClient()" class="btn btn-outline-success">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
