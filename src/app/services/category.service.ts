@@ -1,12 +1,13 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Category } from '../models/category';
-
+import { GLOBAL_URL } from './URL';
 @Injectable({
   providedIn: 'root'
 })
 export class CategoryService {
-  categoryUrl = 'http://localhost:5142/api/Category';
+    
+  categoryUrl = GLOBAL_URL+'Category';
 
   constructor(private httpClient: HttpClient) { }
   httpOptions = {

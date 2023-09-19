@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams  } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Client } from '../models/client';
+import { GLOBAL_URL } from './URL';
 @Injectable({
   providedIn: 'root'
 })
@@ -9,7 +10,7 @@ export class ClientServiceService {
 
   
   constructor(private httpClient: HttpClient) { }
-  clientUrl = 'http://localhost:5142/api/Client';
+  clientUrl = GLOBAL_URL+'Client';
   httpOptions = {
     headers: new HttpHeaders({'Content-Type': 'application/json',
     'Access-Control-Allow-Origin':'*'})

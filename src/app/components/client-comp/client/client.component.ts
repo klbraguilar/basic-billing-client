@@ -30,8 +30,8 @@ export class ClientComponent implements OnInit {
     console.log(this.client)
     this.clientService.createClient(this.client).subscribe(data =>{
       notify('Agregado correctamente.', 'success');
-      //this.router.navigate(["lista"]);
       console.log(data);
+      this.router.navigate(["search"]);
     })
   }
 

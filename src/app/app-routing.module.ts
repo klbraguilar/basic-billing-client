@@ -7,19 +7,14 @@ import { ClientSearchComponent } from './components/client-comp/client-search/cl
 
 
 const routes: Routes = [
-  {path: '',   redirectTo: 'add', pathMatch: 'full'},
-  //{path: 'lista', component:ListaDoctorComponent},
+  {path: '',   redirectTo: 'listcat', pathMatch: 'full'},
+
   {path: 'add', component:ClientComponent},
   {path: 'search', component:ClientSearchComponent},
 
-
   {path: 'addcat', component:CategoryComponent},
   {path: 'listcat', component:CategoryListComponent},
-  /*{path: 'agregarpac', component:PacienteAgregarComponent},
-  {path: 'editarpac', component:PacienteEditarComponent},
-
-  {path: 'listacon', component:ConsultaListaComponent},
-  {path: 'agregarcon', component:ConsultaNuevoComponent},*/
+  
 ];
 
 @NgModule({

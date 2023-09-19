@@ -31,8 +31,8 @@ export class CategoryComponent implements OnInit {
     console.log(this.category)
     this.categoryService.createCategory(this.category).subscribe(data =>{
       notify('Agregado correctamente.', 'success');
-      //this.router.navigate(["lista"]);
       console.log(data);
+      this.router.navigate(["listcat"]);
     })
   }
 
