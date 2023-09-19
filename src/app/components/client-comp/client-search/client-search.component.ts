@@ -36,7 +36,6 @@ export class ClientSearchComponent implements OnInit {
         notify('No data to display', 'fail');
         this.clients = [];
       }
-      this.clientForm.value.searchTerm="";
     })
   }
 
